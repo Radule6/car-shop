@@ -1,7 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from "./components/Navbar/Navbar"
 import FearturedCars from './components/FeaturedCars/FeaturedCars';
+
 
 function App() {
   return (

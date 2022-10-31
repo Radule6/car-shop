@@ -20,7 +20,6 @@ const FearturedCars = () => {
       };
       fearturedCars.push(featuredCar);
     }
-    //console.log(fearturedCars);
     return fearturedCars;
   };
 
@@ -33,7 +32,7 @@ const FearturedCars = () => {
   const featuerdCars = cars.map((car) => (
     <li key={car.carID}>
       <div className="small-preview">
-        <img src={car.main_image}/>
+        <img src={car.main_image} alt={`${car.car_name.brand} ${car.car_name.model}`}/>
         <p>{`${car.car_name.brand} ${car.car_name.model}`}</p>
       </div>
     </li>
