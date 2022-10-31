@@ -1,5 +1,29 @@
+:root{
+  --main-padding:0rem 10rem;
+}
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.small-preview{
+  width: 75%;
+  height: 100%;
+  
+}
+
+img{
+  width: 300px;
+  height: 300px;
+}
+
+.view{
+  display: flex;
+  list-style:none;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items:center;
 }
