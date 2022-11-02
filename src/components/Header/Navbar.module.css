@@ -1,0 +1,89 @@
+@import "../../index.css";
+
+._nav {
+    display: flex;
+    justify-content: space-between;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    background-color: var(--black);
+}
+._nav > .nav_logo > a{
+    color: var(--smoke);
+    text-decoration: none;
+    padding: 0 4rem;
+    font-size: 1.7rem;
+}
+
+._nav > .nav_links{
+    padding: 0 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+._nav > .nav_links > a{
+    color: var(--smoke);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 4px;
+}
+
+._nav > .nav_links > .active{
+    border-bottom: 4px solid var(--red);
+    z-index: 9;
+}
+
+._nav > .nav_burger{
+    display: none;
+}
+
+@media only screen and (max-width: 800px){
+    ._nav {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 2.8rem;
+        background-color: var(--black);
+        justify-content: start;
+    }
+    ._nav > .nav_logo{
+        width: 100%;
+        
+        text-align: center;
+        border-bottom: 2px solid var(--white);
+    }
+
+    ._nav > .nav_links{
+        justify-content: space-around;
+        align-items: center;
+        margin: auto 0;
+        text-align: center;
+        flex-direction: column;
+        background-color: var(--black);
+        height: 90vh;
+        margin: 0;
+        padding: 0;
+        z-index: 2;
+    }
+
+    ._nav > .nav_links > a{
+        font-size: 2rem;
+    }
+
+
+    ._nav > .nav_burger{
+        display:block;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        border: 0;
+        
+    }
+
+    ._nav > .nav_burger > button{
+        background-color: inherit;
+        border: 0;
+    }
+}
+
+
