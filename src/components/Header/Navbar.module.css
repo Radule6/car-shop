@@ -28,10 +28,13 @@
     padding: 4px;
 }
 
+
 ._nav > .nav_links > .active{
     border-bottom: 4px solid var(--red);
     z-index: 9;
 }
+
+
 
 ._nav > .nav_burger{
     display: none;

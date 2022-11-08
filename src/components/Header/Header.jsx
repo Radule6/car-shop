@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 import Style from './Header.module.css';
+import { Outlet} from "react-router-dom";
+
 
 class Header extends Component {
     state = {}
     render() {
         return (
+            <>
             <header className={Style._header}>
                 <Navbar />
                 <div className={Style.container}>
@@ -25,6 +28,8 @@ class Header extends Component {
                     <div className={Style.pic}></div>
                 </div>
             </header>
+
+            <Outlet /></>
         );
     }
 }

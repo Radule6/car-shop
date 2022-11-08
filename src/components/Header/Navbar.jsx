@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import {BsList} from 'react-icons/bs';
+import FearturedCars from '../FeaturedCars/FeaturedCars';
 import Style from './Navbar.module.css';
+import Login from '../Login/Login';
+import ReactDOM from "react-dom/client";
+import { Link} from "react-router-dom";
+
 
 class Navbar extends Component {
     state = {
         show_links: false,
-        links: ["Home","Vehicles","About us", "Log in"]
+        links: ["Home","Vehicles","About us", "Log in"],
+        routes: [<FearturedCars />, "", "", <Login/>]
     }
 
     burger = () => {
@@ -15,17 +21,21 @@ class Navbar extends Component {
         console.log(this.state.show_links);
     }
 
+  
+
     render_nav_links(){
         console.log(this.state.show_links)
         if(window.innerWidth>800 || this.state.show_links === true){
-            return <div className={Style.nav_links}>
-                    <a href="#" className={Style.active}>{this.state.links[0]}</a>
-                    {this.state.links.slice(1).map(
+            return <nav className={Style.nav_links}>
+                    
+                    <Link to="/">{this.state.links[0]}</Link>
+                    <Link to="/login">{this.state.links[3]}</Link>
+                    
+                    {/* {this.state.links.slice(1).map(
                         link => <a href="#" key={link}>{link}</a> 
-                    )}
-                    </div>; 
+                    )} */}
+                    </nav>; 
         }
-        return null;
     }
 
     render() {
