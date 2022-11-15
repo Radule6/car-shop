@@ -14,40 +14,6 @@ const API = "https://422backend.cyclic.app";
 
 const Login = () => {
   const navigate = useNavigate();
-//   const [cars, setFeaturedCar] = useState([]);
-//   const getFeaturedCars = async () => {
-//     const fearturedCars = [];
-//     const response = await fetch(API + "/getFeaturedCars");
-//     const data = await response.json();
-
-//     for (const car of data.cars) {
-//       const response = await fetch(API + "/getCarDisplay/" + car.carID);
-//       const data = await response.json();
-//       const featuredCar = {
-//         carID: car.carID,
-//         ...data,
-//         main_image: API + data.main_image,
-//         header_image: API + data.header_image,
-//       };
-//       fearturedCars.push(featuredCar);
-//     }
-//     return fearturedCars;
-//   };
-
-//   useEffect(() => {
-//     getFeaturedCars().then((fearturedCars) => {
-//       setFeaturedCar(fearturedCars);
-//     });
-//   }, []);
-
-//   const featuerdCars = cars.map((car) => (
-//     <li key={car.carID}>
-//       <div className="small-preview">
-//         <img src={car.main_image} alt={`${car.car_name.brand} ${car.car_name.model}`}/>
-//         <p>{`${car.car_name.brand} ${car.car_name.model}`}</p>
-//       </div>
-//     </li>
-//   ));
 
 //see onSubmit vs formaction for validation/sanitization
   const displayLogin = () => (
@@ -67,7 +33,6 @@ const Login = () => {
   
     const username = event.target.username.value;
     const password = event.target.password.value; 
-    // console.log(username + ' ' + password)
 
     const data = {username: username, password: password};
 
