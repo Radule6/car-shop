@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 const API = "https://422backend.cyclic.app";
 
-const FearturedCars = () => {
+const FeaturedCars = () => {
   const [cars, setFeaturedCar] = useState([]);
   const getFeaturedCars = async () => {
-    const fearturedCars = [];
+    const featuredCarData = [];
     const response = await fetch(API + "/getFeaturedCars");
     const data = await response.json();
 
@@ -18,18 +18,18 @@ const FearturedCars = () => {
         main_image: API + data.main_image,
         header_image: API + data.header_image,
       };
-      fearturedCars.push(featuredCar);
+      featuredCarData.push(featuredCar);
     }
-    return fearturedCars;
+    return featuredCarData;
   };
 
   useEffect(() => {
-    getFeaturedCars().then((fearturedCars) => {
-      setFeaturedCar(fearturedCars);
+    getFeaturedCars().then((featuredCarList) => {
+      setFeaturedCar(featuredCarList);
     });
   }, []);
 
-  const featuerdCars = cars.map((car) => (
+  const featureddCars = cars.map((car) => (
     <li key={car.carID}>
       <div className="small-preview">
         <img src={car.main_image} alt={`${car.car_name.brand} ${car.car_name.model}`}/>
@@ -38,7 +38,7 @@ const FearturedCars = () => {
     </li>
   ));
 
-  return <ul className="view">{featuerdCars}</ul>;
+  return <ul className="view">{featureddCars}</ul>;
 };
 
-export default FearturedCars;
+export default FeaturedCars;
