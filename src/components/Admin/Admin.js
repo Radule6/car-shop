@@ -1,4 +1,4 @@
-import { useEffect, useState, setState } from "react";
+import { useEffect, useState } from "react";
 
 const API = "https://422backend.cyclic.app";
 
@@ -55,15 +55,17 @@ const Admin = () => {
     }
 
     //sends the POST request to the server to update the car
-    const updateCar = async () => {
-        var model = document.getElementById("model").value;
-        var year = document.getElementById("year").value;
-        var category = document.getElementById("category").value;
+    async function updateCar() {
+        var model = parseInt(document.getElementById("model").value);
+        var year = parseInt(document.getElementById("year").value);
+        var category = parseInt(document.getElementById("carType").value);
         var main_image = document.getElementById("main_image").value;
         var header_image = document.getElementById("header_image").value;
         var description = document.getElementById("description").value;
-        var quantity = document.getElementById("quantity").value;
+        var quantity = parseInt(document.getElementById("quantity").value);
         var featured = document.getElementById("featured").checked;
+
+        // alert(featured);
 
         var req = {
             model_year_id: selectedCar,
@@ -76,8 +78,9 @@ const Admin = () => {
             quantity: quantity,
             featured: featured
         }
+ 
 
-        console.log(req);
+        console.log(JSON.stringify(req));
 
         const response = await fetch(API + '/updateCar', {
             method: 'POST',
@@ -90,6 +93,7 @@ const Admin = () => {
           });
 
         console.log("updated:" + response.json()); // parses JSON response into native JavaScript objects
+        window.location.reload(false);
         
     }
 
@@ -157,7 +161,7 @@ const Admin = () => {
                     <td>{car.header_image}</td>
                     <td>{car.description}</td>
                     <td>{car.quantity}</td>
-                    <td>{car.featured}</td>
+                    <td><input type="checkbox" defaultChecked={car.featured} disabled/></td>
                     <td><button type="button" onClick={() => selectCar(car.car_id)}>Edit</button></td>
                 </>
             )
