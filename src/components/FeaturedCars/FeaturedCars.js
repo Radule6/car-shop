@@ -4,22 +4,21 @@ const API = "https://422backend.cyclic.app";
 
 const FeaturedCars = () => {
   const [cars, setFeaturedCar] = useState([]);
+
   const getFeaturedCars = async () => {
     const featuredCarData = [];
     const response = await fetch(API + "/getFeaturedCars");
     const data = await response.json();
 
+    console.log(data);
+
     for (const car of data.cars) {
-      const response = await fetch(API + "/getCarDisplay/" + car.carID);
-      const data = await response.json();
-      const featuredCar = {
-        carID: car.carID,
-        ...data,
-        main_image: API + data.main_image,
-        header_image: API + data.header_image,
-      };
-      featuredCarData.push(featuredCar);
+      car.main_image = API + car.main_image;
+      car.header_image = API + car.header_image;
+      featuredCarData.push(car);
+      console.log(car);
     }
+
     return featuredCarData;
   };
 
