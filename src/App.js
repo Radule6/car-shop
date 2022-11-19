@@ -1,24 +1,21 @@
-import './App.css';
-import FearturedCars from './components/FeaturedCars/FeaturedCars';
-import Login from './components/Login/Login';
-import Header from './components/Header/Header';
-import Admin from './components/Admin/Admin';
+import "./App.css";
+import Login from "./components/Login/Login";
+import Admin from "./components/Admin/Admin";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
 
 function App() {
   return (
     <div className="App">
-       <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Header/>}>
-                <Route index element={<FearturedCars/>} />
-                <Route path="login" element={<Login/>} />
-                <Route path="admin" element={<Admin/>} />
-              </Route>
-            </Routes>
-          </BrowserRouter>
-
+      <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="login" element={<Login />} />
+          <Route path="admin" element={<Admin />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
