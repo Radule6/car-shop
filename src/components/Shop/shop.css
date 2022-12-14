@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    height: 80px;
+    width: 100%;
+    background-color: blue;
+}
+
+#shop{
+    display: flex;
+    overflow: hidden;
+}
+
+#shop > .sidebar{
+
+    width: clamp(300px, 20%, 350px);
+    line-height: 30px;
+    padding: 20px;
+    border-right: 1px solid black;
+}
+
+#shop > .items{
+    padding: 20px;
+    width: 100%;
+}
+
+#shop > .items > .start{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#shop > .items > .start > button{
+    background-color: darkblue;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: 0;
+    margin-bottom: 5px;
+}
+
+#shop > .items > .result{
+    width:100%;
+    gap: 40px;
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#shop > .items > .result > .item{
+    width: 300px;
+}
+
+#shop > .items > .result > .item > img{
+    width: 100%;
+}
+
+#shop > .items > .result > .item > p{
+    padding-left: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+    #shop{
+        flex-direction: column;
+    }
+
+    #shop > .sidebar{
+        width: 90%;
+        margin: auto;
+        border: 0;
+    }
+
+    #shop > .items{
+        width: 95%;
+        margin: auto;
+    }
+
+    #shop > .items > .result {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #shop > .items > .result > .item{
+        width: 80%;
+    }
+}

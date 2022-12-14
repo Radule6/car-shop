@@ -7,6 +7,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import BuyCar from "./BuyCar/BuyCar";
 import Footer from "./components/Footer/Footer";
+import About from "./components/About/About";
+import Shop from "./components/Shop/Shop";
 
 function App() {
   const [car, setCar] = useState([]);
@@ -25,6 +27,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/car/:id" element={<BuyCar />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/shop" element={<Shop />} />
         </Routes>
       </BrowserRouter>
       <Footer />
