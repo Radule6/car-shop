@@ -44,7 +44,7 @@ const BuyCar = () => {
         Car Parts:
         <ul>
           {carPackage.parts.map((parts) => (
-            <li>{parts}</li>
+            <li>{parts.part_name}</li>
           ))}
         </ul>
       </p>
