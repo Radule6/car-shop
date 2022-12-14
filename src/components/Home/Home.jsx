@@ -2,6 +2,7 @@ import React from "react";
 import Style from "./Home.module.css";
 // import { Outlet } from "react-router-dom";
 import FearturedCars from "../FeaturedCars/FeaturedCars";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
   return (
